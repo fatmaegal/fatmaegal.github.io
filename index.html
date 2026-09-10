@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatma Egal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FBF3E7;
+    --cream-deep: #F3E6D2;
+    --sage: #9CAE8C;
+    --sage-deep: #7C9470;
+    --clay: #E2A48F;
+    --clay-deep: #CD8975;
+    --periwinkle: #8FA6C9;
+    --brown: #4A3A2E;
+    --brown-soft: #6B5647;
+    --butter: #F0C766;
+    --white-soft: #FFFDF8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--brown);
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Baloo 2', cursive;
+    color: var(--brown);
+    font-weight: 700;
+  }
+
+  .sky {
+    background: linear-gradient(180deg, #E7F0E3 0%, var(--cream) 65%);
+    padding: 60px 24px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cloud {
+    position: absolute;
+    background: var(--white-soft);
+    border-radius: 50px;
+    opacity: 0.8;
+  }
+  .cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: var(--white-soft);
+    border-radius: 50%;
+  }
+  .cloud-1 { width: 90px; height: 32px; top: 40px; left: 8%; }
+  .cloud-1::before { width: 46px; height: 46px; top: -22px; left: 10px; }
+  .cloud-1::after { width: 32px; height: 32px; top: -14px; left: 52px; }
+  .cloud-2 { width: 70px; height: 26px; top: 100px; right: 12%; }
+  .cloud-2::before { width: 36px; height: 36px; top: -18px; left: 8px; }
+  .cloud-2::after { width: 26px; height: 26px; top: -10px; left: 40px; }
+
+  .hero {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 0 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .name-plate {
+    display: inline-block;
+    background: var(--white-soft);
+    border: 3px solid var(--brown);
+    border-radius: 20px;
+    padding: 8px 22px;
+    font-family: 'Baloo 2', cursive;
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+    color: var(--brown-soft);
+    box-shadow: 4px 4px 0 var(--brown);
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 14px;
+  }
+
+  .hero .role {
+    font-size: 1.15rem;
+    color: var(--brown-soft);
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+
+  .hero p.blurb {
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 1.02rem;
+    color: var(--brown-soft);
+  }
+
+  .cottage {
+    width: 130px;
+    height: 130px;
+    margin: 36px auto 0;
+    position: relative;
+  }
+  .cottage .roof {
+    width: 0; height: 0;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-bottom: 55px solid var(--clay-deep);
+    position: absolute;
+    top: 0; left: -5px;
+  }
+  .cottage .body {
+    width: 100px;
+    height: 70px;
+    background: var(--white-soft);
+    border: 3px solid var(--brown);
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    border-radius: 4px;
+  }
+  .cottage .door {
+    width: 26px;
+    height: 38px;
+    background: var(--sage-deep);
+    border: 2px solid var(--brown);
+    border-radius: 12px 12px 0 0;
+    position: absolute;
+    top: 82px;
+    left: 65px;
+  }
+  .cottage .window {
+    width: 20px;
+    height: 20px;
+    background: var(--periwinkle);
+    border: 2px solid var(--brown);
+    border-radius: 5px;
+    position: absolute;
+    top: 62px;
+    left: 30px;
+  }
+  .cottage .smoke {
+    width: 8px;
+    height: 8px;
+    background: var(--white-soft);
+    border-radius: 50%;
+    position: absolute;
+    top: -18px;
+    left: 92px;
+    opacity: 0.85;
+  }
+
+  .hill-divider {
+    width: 100%;
+    height: 60px;
+    background: var(--sage);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    margin-top: -1px;
+  }
+
+  section.plot {
+    padding: 70px 24px;
+  }
+
+  .plot-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .plot-sign {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--butter);
+    border: 3px solid var(--brown);
+    border-radius: 14px;
+    padding: 6px 18px;
+    font-family: 'Baloo 2', cursive;
+    font-size: 0.95rem;
+    box-shadow: 3px 3px 0 var(--brown);
+    margin-bottom: 24px;
+  }
+
+  .card-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+  }
+
+  .card {
+    background: var(--white-soft);
+    border: 3px solid var(--brown);
+    border-radius: 18px;
+    padding: 22px;
+    transition: transform 0.15s ease;
+  }
+  .card:hover { transform: translateY(-4px); }
+
+  .card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+  }
+
+  .card p { font-size: 0.92rem; color: var(--brown-soft); }
+
+  .tag {
+    display: inline-block;
+    background: var(--cream-deep);
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--sage-deep);
+    margin-top: 10px;
+  }
+
+  .sage-plot { background: var(--sage); color: var(--white-soft); }
+  .sage-plot h2, .sage-plot .plot-sign { color: var(--brown); }
+  .sage-plot p { color: var(--white-soft); }
+
+  .clay-plot { background: var(--clay); }
+
+  .footer-hill {
+    background: var(--periwinkle);
+    padding: 50px 24px;
+    text-align: center;
+  }
+  .footer-hill h2 { color: var(--white-soft); margin-bottom: 12px; }
+  .footer-hill p { color: var(--white-soft); }
+
+  .chest {
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--butter);
+    border: 3px solid var(--brown);
+    border-radius: 14px;
+    padding: 12px 26px;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 600;
+    color: var(--brown);
+    box-shadow: 4px 4px 0 var(--brown);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2.1rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="sky">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="hero">
+      <div class="name-plate">✦ welcome to my plot ✦</div>
+      <h1>Fatma Egal</h1>
+      <div class="role">Founder · AI Safety Researcher · Community Builder</div>
+      <p class="blurb">Building tools that keep families safe online, studying how AI understands Arabic, and tending a small corner of the internet about it all.</p>
+
+      <div class="cottage">
+        <div class="smoke"></div>
+        <div class="roof"></div>
+        <div class="body"></div>
+        <div class="window"></div>
+        <div class="door"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hill-divider"></div>
+
+  <section class="plot">
+    <div class="plot-inner">
+      <div class="plot-sign">🌱 the startup patch</div>
+      <h2>Jeel AI</h2>
+      <p style="margin-top:10px; color: var(--brown-soft);">A UAE-based family AI safety platform, licensed to schools, corporations, and government bodies to help families navigate AI together.</p>
+      <div class="card-row">
+        <div class="card">
+          <h3>What it does</h3>
+          <p>Gives families and institutions practical tools for AI safety, built specifically for a B2B2C model.</p>
+          <span class="tag">Founder</span>
+        </div>
+        <div class="card">
+          <h3>Where it's grown</h3>
+          <p>2025–26 Sheraa Startup Dojo cohort, and Dubai Chambers × FRWRDX Ideation Cohort 2.</p>
+          <span class="tag">Sheraa · FRWRDX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="plot sage-plot">
+    <div class="plot-inner">
+      <div class="plot-sign" style="background: var(--white-soft);">🔬 the research grove</div>
+      <h2>PRISM Fellowship</h2>
+      <p style="margin-top:10px;">Working on Arabic multilingual AI safety evaluations — making sure safety research doesn't stop at English.</p>
+      <div class="card-row">
+        <div class="card">
+          <h3 style="color: var(--brown);">Core focus</h3>
+          <p style="color: var(--brown-soft);">Evaluating how AI safety holds up across Arabic dialects and multilingual contexts.</p>
+        </div>
+        <div class="card">
+          <h3 style="color: var(--brown);">Also tending</h3>
+          <p style="color: var(--brown-soft);">Core team member at AI Safety UAE, leading creative direction and events.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="plot clay-plot">
+    <div class="plot-inner">
+      <div class="plot-sign">📚 the old schoolhouse</div>
+      <h2>Education & Training</h2>
+      <div class="card-row">
+        <div class="card">
+          <h3>BSc Biotechnology</h3>
+          <p>University of Sharjah</p>
+        </div>
+        <div class="card">
+          <h3>Women in AI ML/AI Course</h3>
+          <p>Five months, via Abdullah Al Ghurair Foundation scholarship</p>
+        </div>
+        <div class="card">
+          <h3>AGI Strategy</h3>
+          <p>BlueDot Impact</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-hill">
+    <h2>Come say hi</h2>
+    <p>Always happy to talk AI safety, multilingual research, or building things for families.</p>
+    <a class="chest" href="mailto:you@example.com">✉ open the mail chest</a>
+  </div>
+
+</body>
+</html>
