@@ -81,7 +81,8 @@
   .nav{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.4rem}
   .brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;letter-spacing:.02em;text-decoration:none;color:var(--ink)}
   .brand span{color:var(--terra)}
-  nav ul{display:flex;gap:.35rem;list-style:none;flex-wrap:wrap}
+  nav ul{display:flex;gap:.35rem;list-style:none;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;white-space:nowrap}
+  nav ul::-webkit-scrollbar{display:none}
   nav a{
     text-decoration:none;color:var(--ink-soft);font-size:.92rem;font-weight:500;
     padding:.42rem .85rem;border-radius:999px;transition:all .25s ease;
@@ -143,6 +144,7 @@
   .news-scroll{
     background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
     box-shadow:var(--shadow);max-height:340px;overflow-y:auto;
+    -webkit-overflow-scrolling:touch;touch-action:pan-y;
   }
   .news-scroll::-webkit-scrollbar{width:8px}
   .news-scroll::-webkit-scrollbar-track{background:transparent}
@@ -267,7 +269,7 @@
         <div class="role"><a href="https://prism-research.org/" target="_blank" rel="noopener" style="color:inherit">PRISM Research Fellow</a> · AI Safety Researcher</div>
         <div class="loc">Sharjah, United Arab Emirates 🇦🇪</div>
         <p class="lede">
-          I work in multilingual AI evaluation, working on designing datasets
+          I work in multilingual AI evaluation, designing datasets
           and culturally-aware safety tests across Arabic (MSA &amp; dialects). I also founded <strong><a href="https://jeelai.org/" target="_blank" rel="noopener" style="color:inherit">JEEL AI</a></strong>, a child AI-safety literacy platform for parents.
         </p>
         <div class="chips">
