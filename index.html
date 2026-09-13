@@ -588,8 +588,8 @@
     const track = wrap.querySelector('.car-track');
     const imgs  = Array.from(track.querySelectorAll('img'));
     const ph    = wrap.querySelector('.car-placeholder');
-    if(imgs.length === 0) return;               // keep placeholder visible
-    ph.style.display = 'none';
+    if(imgs.length === 0){ if(ph) ph.style.display = ''; return; }
+    if(ph) ph.style.display = 'none';
     if(imgs.length === 1) return;               // single image: no arrows needed
     let i = 0;
     const prev = document.createElement('button'); prev.className='car-btn car-prev'; prev.innerHTML='&#10094;'; prev.setAttribute('aria-label','previous photo');
