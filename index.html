@@ -89,6 +89,17 @@
   }
   nav a:hover{background:var(--sage-soft);color:var(--ink)}
   nav a.active{background:var(--terra);color:#fff}
+    @media(max-width:720px){
+    #navToggle{display:block !important}
+    #navMenu{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);border-bottom:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    #navMenu.open{display:block}
+    #navMenu ul{flex-direction:column;padding:.6rem;gap:.2rem}
+    #navMenu a{display:block;width:100%}
+  }
 
   /* ---------- layout ---------- */
   main{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 1.4rem 5rem}
@@ -147,9 +158,9 @@
     -webkit-overflow-scrolling:touch;touch-action:pan-y;
   }
   .news-scroll::-webkit-scrollbar{width:8px}
-  .news-scroll::-webkit-scrollbar-track{background:transparent}
-  .news-scroll::-webkit-scrollbar-thumb{background:var(--sage-soft);border-radius:99px}
-  .news-scroll::-webkit-scrollbar-thumb:hover{background:var(--terra-soft)}
+  .news-scroll::-webkit-scrollbar-track{background:var(--cream-deep)}
+  .news-scroll::-webkit-scrollbar-thumb{background:var(--terra-soft);border-radius:99px}
+  .news-scroll::-webkit-scrollbar-thumb:hover{background:var(--terra)}
   .news-card{
     padding:1.1rem 1.5rem;border-bottom:1px solid var(--line);
   }
@@ -243,7 +254,8 @@
 <header>
   <div class="nav">
     <a class="brand" href="#home">Fatma<span>Egal</span></a>
-    <nav>
+    <button id="navToggle" aria-label="Menu" style="display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink)">&#9776;</button>
+    <nav id="navMenu">
       <ul>
         <li><a href="#home" data-page="home" class="active">Home</a></li>
         <li><a href="#bio" data-page="bio">Bio</a></li>
@@ -616,6 +628,10 @@
     wrap.style.backgroundPosition = 'center 15%';
     wrap.innerHTML = '';
   })();
+ const navToggle = document.getElementById('navToggle');
+ const navMenu = document.getElementById('navMenu');
+navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMenu.classList.remove('open')));
 </script>
 
 </body>
